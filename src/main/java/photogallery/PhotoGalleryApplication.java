@@ -3,12 +3,10 @@ package photogallery;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-/**
- * Created by HiMan on 22.05.2016.
- */
 @SpringBootApplication
-public class Photo {
+public class PhotoGalleryApplication {
+
     public static void main(String[] args) {
-        SpringApplication.run(Photo.class,args);
+        SpringApplication.run(PhotoGalleryApplication.class,args);
     }
 }

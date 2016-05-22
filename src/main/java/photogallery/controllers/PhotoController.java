@@ -50,7 +50,6 @@ public class PhotoController {
                         Files.copy(file.toPath(),new File(destinationFolder.getPath()+"\\"+file.getName()).toPath());
                     } catch (IOException e) {
                         e.printStackTrace();
-
                     }
                 }
             }

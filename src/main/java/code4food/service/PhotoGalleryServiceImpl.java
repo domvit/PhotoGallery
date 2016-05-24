@@ -14,7 +14,7 @@ public class PhotoGalleryServiceImpl implements PhotoGalleryService {
       }else {
         if (file.getName().toLowerCase().endsWith(".png")) {
           String filePath = file.getPath();
-          System.out.println(filePath + "   " + destinationFolder.getPath()+"\\"+file.getName());
+//          System.out.println(filePath + "   " + destinationFolder.getPath()+"\\"+file.getName());
           try {
             Files.copy(file.toPath(), new File(destinationFolder.getPath() + "\\" + file.getName()).toPath());
           } catch (IOException e) {

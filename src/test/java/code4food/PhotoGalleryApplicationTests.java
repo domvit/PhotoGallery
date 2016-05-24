@@ -1,4 +1,4 @@
-package photogallery;
+package code4food;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

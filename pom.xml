@@ -9,7 +9,7 @@
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
-    <name>photogallery</name>
+    <name>code4food</name>
     <description>RESTful Photo Gallery</description>
 
     <parent>
@@ -75,7 +75,7 @@
     </reporting>
 
     <build>
-        <finalName>photogallery</finalName>
+        <finalName>code4food</finalName>
         <plugins>
 
             <plugin>

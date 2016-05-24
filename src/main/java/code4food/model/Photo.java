@@ -1,23 +1,19 @@
 package code4food.model;
 
 public class Photo {
-
-  private String id;
   private String name;
+  private String path;
 
-  public String getId() {
-    return id;
-  }
-
-  public void setId(String id) {
-    this.id = id;
+  public Photo(String name, String path) {
+    this.name = name;
+    this.path = path;
   }
 
   public String getName() {
     return name;
   }
 
-  public void setName(String name) {
-    this.name = name;
+  public String getPath() {
+    return path;
   }
 }

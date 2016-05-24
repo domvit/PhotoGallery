@@ -4,6 +4,7 @@
     <title>RESTful Photo Gallery</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <link rel="stylesheet" href="../css/bootstrap.min.css" th:href="@{../css/bootstrap.min.css}"/>
+    <link rel="stylesheet" href="../css/style.css" th:href="@{../css/style.css}"/>
 
 </head>
 <body>
@@ -11,13 +12,20 @@
     <div class="jumbotron">
         <h1>RESTful Photo Gallery</h1>
     </div>
-    <div class="row">
+    <!--@thymesVar id="displayActionForm" type=""-->
+    <div th:class="'row '+${displayActionForm}">
         <h2>Type your pic folder</h2>
+
         <form action="/photo" method="post">
-            <input type="text" required="true" name="pathname" class="form-control">
+            <input type="text" required="true" name="pathName" class="form-control"/>
+            <h2>and create your gallery</h2>
+            <button type="submit" class="btn btn-primary btn-block btn-lg">Create Gallery</button>
         </form>
-        <h2>and create your gallery</h2>
-        <button type="submit" class="btn btn-primary btn-block btn-lg">Create Gallery</button>
+    </div>
+    <!--@thymesVar id="displayPhoto" type=""-->
+    <div th:class="'row '+${displayPhoto}">
+        <!--@thymesVar id="name" type=""-->
+        <p th:text="'Hello, ' + ${name} + '!'" />
     </div>
 </div>
 </body>

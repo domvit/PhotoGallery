@@ -1,11 +1,24 @@
 <!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Getting Started: Serving Web Content</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>RESTful Photo Gallery</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="../css/bootstrap.min.css" th:href="@{../css/bootstrap.min.css}"/>
+
 </head>
 <body>
-<!--@thymesVar id="name" type=""-->
-<p th:text="'Hello, ' + ${name} + '!'" />
+<div class="container">
+    <div class="jumbotron">
+        <h1>RESTful Photo Gallery</h1>
+    </div>
+    <div class="row">
+        <h2>Type your pic folder</h2>
+        <form action="/photo" method="post">
+            <input type="text" required="true" name="pathname" class="form-control">
+        </form>
+        <h2>and create your gallery</h2>
+        <button type="submit" class="btn btn-primary btn-block btn-lg">Create Gallery</button>
+    </div>
+</div>
 </body>
 </html>

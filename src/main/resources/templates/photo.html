@@ -12,13 +12,16 @@
     <div class="jumbotron">
         <h1>RESTful Photo Gallery</h1>
     </div>
-    <!--@thymesVar id="displayActionForm" type=""-->
+    <!--@thymesVar id="photos" type=""-->
     <div class="row">
-
+        <div class = "col-md-3"  th:each="photo : ${photos}">
+            <!--@thymesVar id="data" type=""-->
+            <img th:src="@{'data:image/png;base64,'+${photo.data}}" alt="" />
+        </div>
     </div>
     <div th:class="jumbotron">
         <!--@thymesVar id="name" type=""-->
-         <p th:text="'Hello, ' + ${name} + '!'" />
+         <p th:text="'Number of upload photos: ' + ${name}" />
     </div>
 </div>
 </body>

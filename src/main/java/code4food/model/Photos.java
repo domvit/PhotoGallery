@@ -9,7 +9,6 @@ import java.util.List;
 public class Photos {
 
     private List<Photo> photos = new ArrayList<>();
-
     private static Photos ourInstance = new Photos();
 
     public static Photos getInstance() {
@@ -26,4 +25,13 @@ public class Photos {
     public void addPhoto(Photo photo){
         photos.add(photo);
     }
+
+    public int getCountPhotos(){
+        return photos.size();
+    }
+
+    public void clearPhotos(){
+        photos = new ArrayList<>();
+    }
+
 }

@@ -1,5 +1,6 @@
 package code4food.controllers;
 
+import code4food.model.Photos;
 import code4food.service.PhotoGalleryServiceImpl;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,36 +21,30 @@ public class PhotoController {
 //    public String photo(Model model) {
 //        return "photo";
 //    }
-    private static final String DISPLAY = "display";
-    private static final String NO_DISPLAY = "nodisplay";
 
-//     добавить в метод проверку на наличие загруженной галлереи и в
-//     соответствии с результатом выставлять дисплей/нодисплей
 
     @RequestMapping(value="/photo", method=RequestMethod.GET)
-    public String photo(Model model) {
-        model.addAttribute("displayActionForm", DISPLAY);
-        model.addAttribute("displayPhoto", NO_DISPLAY);
-        return "photo";
+    public String index(Model model) {
+        Photos.getInstance().clearPhotos();
+        return "index";
     }
 
 //    Дописать добавление фотографий (Photo) в лист (Photos)
     @RequestMapping(value="/photo", method=RequestMethod.POST)
     public String photoSubmit(@RequestParam("pathName") String pathName, Model model) {
-        String error = "";
+        StringBuilder error = new StringBuilder("");
         File destFolder = new File(pathName);
         File targetFolder;
-        try {
-            targetFolder = File.createTempFile("temp_gallery_folder","");
-            targetFolder.delete();
-            targetFolder.mkdir();
-            new PhotoGalleryServiceImpl().scanFolders(destFolder,targetFolder);
-        } catch (IOException e) {
-            error = e.toString();
-        }
+//        try {
+//            targetFolder = File.createTempFile("temp_gallery_folder","");
+//            targetFolder.delete();
+//            targetFolder.mkdir();
+            new PhotoGalleryServiceImpl().scanFolders(destFolder);
+//        } catch (IOException e) {
+//            error = e.toString();
+//        }
+        error.append(Photos.getInstance().getCountPhotos());
         model.addAttribute("name",error);
-        model.addAttribute("displayActionForm", NO_DISPLAY);
-        model.addAttribute("displayPhoto", DISPLAY);
         return "photo";
     }
 }

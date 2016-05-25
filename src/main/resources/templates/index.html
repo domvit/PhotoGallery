@@ -12,13 +12,13 @@
     <div class="jumbotron">
         <h1>RESTful Photo Gallery</h1>
     </div>
-    <!--@thymesVar id="displayActionForm" type=""-->
     <div class="row">
-
-    </div>
-    <div th:class="jumbotron">
-        <!--@thymesVar id="name" type=""-->
-         <p th:text="'Hello, ' + ${name} + '!'" />
+        <h2>Type your pic folder</h2>
+        <form action="/photo" method="post">
+            <input type="text" required="true" name="pathName" class="form-control"/>
+            <h2>and create your gallery</h2>
+            <button type="submit" class="btn btn-primary btn-block btn-lg">Create Gallery</button>
+        </form>
     </div>
 </div>
 </body>

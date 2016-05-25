@@ -37,7 +37,7 @@ public class Photo {
       byte imageData[] = new byte[(int) file.length()];
       imageInFile.read(imageData);
       // Converting Image byte array into Base64 String
-      imageDataString = Base64.encodeBase64URLSafeString(imageData);
+      imageDataString = Base64.encodeBase64String(imageData);
       imageInFile.close();
       System.out.println("Image "+path + "\\" + name+" Successfully Manipulated!");
     } catch (FileNotFoundException e) {

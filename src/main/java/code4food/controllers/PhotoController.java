@@ -44,6 +44,7 @@ public class PhotoController {
 //            error = e.toString();
 //        }
         error.append(Photos.getInstance().getCountPhotos());
+        model.addAttribute("photos",Photos.getInstance().getPhotos());
         model.addAttribute("name",error);
         return "photo";
     }

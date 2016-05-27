@@ -7,8 +7,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class OriginalController {
+public class OriginalPhotoSizeController {
 
+  /**
+   *
+   * @param model in Spring MVC
+   * @return view with original size photo
+   */
   @RequestMapping("/photo/original")
   public String photoOriginal(String name, Model model) {
     Photos photos = Photos.getInstance();

@@ -10,17 +10,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by HiMan on 25.05.2016.
+ *
+ * A helper class that provide functionality of searching images with *.png extension in th specified directory
+ * type by user
  */
 public class Photos {
 
     private List<String> photos = new ArrayList<>();
+
     private static Photos ourInstance = new Photos();
 
     public static Photos getInstance() {
         return ourInstance;
     }
-
+    
     private Photos() {
     }
 
@@ -39,6 +42,12 @@ public class Photos {
     public void clearPhotos(){
         photos = new ArrayList<>();
     }
+
+    /**
+     *
+     * This method search images with *.png extension in th specified directory
+     * type by user and all of its subdirectories
+     */
     public void scanFolders(File scanfolder) {
         File[] files = scanfolder.listFiles();
         for(File file:files){
@@ -55,6 +64,11 @@ public class Photos {
         }
     }
 
+    /**
+     *
+     * This method encode binary data by treating it numerically and translating it into a base64 representation
+     * @return a base64 photos representation
+     */
     private String encodeImage(String path){
         System.out.println(path);
         File file = new File(path);

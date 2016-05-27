@@ -7,17 +7,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-/**
- * класс описывает маппинг на /photo/wh/
- */
 @Controller
 public class AspectRatioController {
 
     /**
      *
      * @param string
-     * @param model
-     * @return
+     * @param model in Spring MVC
+     * @return view with default size photo
      */
     @RequestMapping("/photo/wh/{string}")
     public String photoRow(@PathVariable final String string, Model model) {

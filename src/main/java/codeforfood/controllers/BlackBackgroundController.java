@@ -1,7 +1,7 @@
 package codeforfood.controllers;
 
-import codeforfood.model.Photos;
-import codeforfood.model.Styles;
+import codeforfood.util.Photos;
+import codeforfood.util.Styles;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;

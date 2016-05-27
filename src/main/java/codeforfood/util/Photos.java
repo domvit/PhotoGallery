@@ -1,4 +1,4 @@
-package codeforfood.model;
+package codeforfood.util;
 
 import org.apache.tomcat.util.codec.binary.Base64;
 

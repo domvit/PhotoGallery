@@ -1,4 +1,4 @@
-package codeforfood.model;
+package codeforfood.util;
 
 /**
  class describes the parameters of style for CSS

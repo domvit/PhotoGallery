@@ -3,35 +3,49 @@
 <head>
     <title>RESTful Photo Gallery</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <link rel="stylesheet" href="../css/bootstrap.min.css" th:href="@{../css/bootstrap.min.css}"/>
-    <link rel="stylesheet" href="../css/style.css" th:href="@{../css/style.css}"/>
-    <style>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" href="/css/style.css" th:href="@{/css/style.css}"/>
+
+    <style th:inline="text">
         .col-md-user{
-            width: 250px;
-            height: 200px;
-            float: left;
-            position: relative;
-            min-height: 1px;
-            margin: 15px 15px;
-            box-sizing: border-box;
+            width: [[@{(${style.widthPhoto})}]]px;
+            height: [[@{(${style.heightPhoto})}]]px;
         }
-        .col-md-user img{
-            width: 100%;
-            height: 100%;
+
+        .col-user-offset{
+            margin-left: [[@{(${style.marginLeftRow})}]]px;
+        }
+        .user-background{
+            background-color: [[@{(${style.backgroundColor})}]];
         }
     </style>
 
+    <style th:if="${style.original} == 'original'">
+        .col-md-user{
+            width: auto;
+            height: auto;
+        }
+        .col-md-user img{
+            width: 100%;
+        }
+        .col-user-offset{
+        margin-left: auto;
+        }
+    </style>
+
+
+
 </head>
-<body>
+<body class="user-background">
 <div class="container">
     <div class="jumbotron">
         <h1>RESTful Photo Gallery</h1>
     </div>
     <!--@thymesVar id="photos" type=""-->
-    <div class="row col-md-offset-1">
+    <div class="row col-user-offset" >
         <div class = "col-md-user"  th:each="photo : ${photos}">
             <!--@thymesVar id="data" type=""-->
-            <img th:src="@{'data:image/png;base64,'+${photo}}" alt="" />
+            <img th:src="@{'data:image/png;base64,' + ${photo}}" alt="" />
         </div>
     </div>
     <div th:class="jumbotron">

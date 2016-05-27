@@ -1,6 +1,7 @@
 package codeforfood.controllers;
 
 import codeforfood.model.Photos;
+import codeforfood.model.Styles;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,14 +19,16 @@ public class PhotoController {
         return "index";
     }
 
-//    Дописать добавление фотографий (Photo) в лист (Photos)
+
     @RequestMapping(value="/photo", method=RequestMethod.POST)
     public String photoSubmit(@RequestParam("pathName") String pathName, Model model) {
         Photos photos = Photos.getInstance();
+        Styles styles = new Styles();
         StringBuilder message = new StringBuilder("");
         File destFolder = new File(pathName);
         photos.scanFolders(destFolder);
         message.append(photos.getCountPhotos());
+        model.addAttribute("style", styles);
         model.addAttribute("photos",photos.getPhotos());
         model.addAttribute("name",message);
         return "photo";

@@ -1,4 +1,4 @@
-package code4food.controllers;
+package codeforfood.controllers;
 
 public class BackgroundController {
 }

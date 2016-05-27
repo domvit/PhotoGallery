@@ -1,6 +1,6 @@
-package code4food.controllers;
+package codeforfood.controllers;
 
-import code4food.model.Photos;
+import codeforfood.model.Photos;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -8,9 +8,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.io.File;
-import java.io.IOException;
-import java.util.Date;
-import java.util.GregorianCalendar;
 
 @Controller
 public class PhotoController {

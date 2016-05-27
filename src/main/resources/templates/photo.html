@@ -5,6 +5,21 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <link rel="stylesheet" href="../css/bootstrap.min.css" th:href="@{../css/bootstrap.min.css}"/>
     <link rel="stylesheet" href="../css/style.css" th:href="@{../css/style.css}"/>
+    <style>
+        .col-md-user{
+            width: 250px;
+            height: 200px;
+            float: left;
+            position: relative;
+            min-height: 1px;
+            margin: 15px 15px;
+            box-sizing: border-box;
+        }
+        .col-md-user img{
+            width: 100%;
+            height: 100%;
+        }
+    </style>
 
 </head>
 <body>
@@ -13,10 +28,10 @@
         <h1>RESTful Photo Gallery</h1>
     </div>
     <!--@thymesVar id="photos" type=""-->
-    <div class="row">
-        <div class = "col-md-3"  th:each="photo : ${photos}">
+    <div class="row col-md-offset-1">
+        <div class = "col-md-user"  th:each="photo : ${photos}">
             <!--@thymesVar id="data" type=""-->
-            <img th:src="@{'data:image/png;base64,'+${photo.data}}" alt="" />
+            <img th:src="@{'data:image/png;base64,'+${photo}}" alt="" />
         </div>
     </div>
     <div th:class="jumbotron">

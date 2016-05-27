@@ -1,9 +1,12 @@
 package codeforfood.util;
 
+import org.springframework.stereotype.Component;
+
 /**
  class describes the parameters of style for CSS
  *
  */
+@Component
 public class Styles {
     private int heightPhoto = 200;
     private int widthPhoto = 200;
@@ -15,7 +18,7 @@ public class Styles {
 
     /**
      *
-     * @param row -
+     * @param row - image count in row
      */
     public void setRow(int row){
         widthPhoto = CONTAINER_WIDTH/row - 30;
@@ -25,8 +28,8 @@ public class Styles {
 
     /**
      *
-     * @param weigth
-     * @param height
+     * @param weigth of image
+     * @param height of image
      */
     public void setRatio(int weigth, int height) {
         widthPhoto = weigth;

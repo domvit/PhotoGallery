@@ -10,6 +10,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class RowController {
 
+  /**
+   *
+   * @param model in Spring MVC
+   * @return view with default row
+   */
   @RequestMapping("/photo/row/{string}")
   public String photoRow(@PathVariable String string, Model model) {
     Photos photos = Photos.getInstance();

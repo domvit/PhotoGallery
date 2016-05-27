@@ -23,7 +23,7 @@ public class Photos {
     public static Photos getInstance() {
         return ourInstance;
     }
-    
+
     private Photos() {
     }
 
